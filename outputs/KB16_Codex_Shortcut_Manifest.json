@@ -1,53 +1,74 @@
 {
   "device": "KB16-01",
   "platform": "macOS",
-  "targetApplication": "ChatGPT desktop app - Codex",
-  "version": "1.2",
+  "targetApplication": "ChatGPT desktop app — Codex",
+  "version": "2.0.0",
+  "layoutFile": "KB16-01_Codex_Desktop_v2.layout.json",
+  "verifiedAppVersion": "26.803.61601",
+  "verifiedDate": "2026-08-13",
+  "hardware": {
+    "vendorId": "0xD010",
+    "productId": "0x1601",
+    "vendorProductIdDecimal": 3490715137,
+    "keys": 16,
+    "clickableEncoders": 3,
+    "layers": 4
+  },
+  "layerDisplay": {
+    "1": {"viaLayer": 0, "name": "CHAT", "behavior": "default"},
+    "2": {"viaLayer": 1, "name": "CONTROL", "behavior": "persistent"},
+    "3": {"viaLayer": 2, "name": "REVIEW", "behavior": "persistent"},
+    "4": {"viaLayer": 3, "name": "WORK", "behavior": "momentary"}
+  },
   "nativeShortcuts": {
-    "newTask": "Command-N",
+    "newChat": "Command-N",
     "quickChat": "Command-Option-N",
-    "searchTasks": "Command-G",
-    "previousTask": "Command-Shift-[",
-    "nextTask": "Command-Shift-]",
+    "searchChats": "Command-G",
+    "previousChat": "Command-Shift-[",
+    "nextChat": "Command-Shift-]",
     "commandMenu": "Command-K",
     "dictation": "Control-Shift-D",
     "toggleSidebar": "Command-B",
     "openFolder": "Command-O",
-    "openReview": "Control-Shift-G",
+    "openReviewTab": "Control-Shift-G",
     "toggleReviewPanel": "Command-Option-B",
     "toggleTerminal": "Control-`",
-    "settings": "Command-,",
-    "keyboardShortcuts": "Command-Shift-/"
+    "findInChat": "Command-F"
   },
   "customSignals": {
     "Command-Option-F13": "Voice chat hotkey",
-    "Control-Option-Command-[": "Decrease reasoning depth",
-    "Control-Option-Command-]": "Increase reasoning depth",
-    "Control-Option-Command-M": "Open agent/model controls",
-    "F17": "Model selector",
-    "F18": "Mode selector",
-    "F19": "Accept selected change",
-    "F20": "Reject selected change",
-    "F21": "Previous review change",
-    "F22": "Next review change",
-    "F23": "Accept all changes",
-    "F24": "Reject all changes"
+    "Control-Option-Command-[": "Decrease reasoning effort",
+    "Control-Option-Command-]": "Increase reasoning effort",
+    "F13": "Open model picker",
+    "F14": "Toggle plan mode",
+    "F15": "Toggle Fast mode",
+    "F16": "Attach files and folders",
+    "F17": "Approve request",
+    "F18": "Decline request",
+    "F19": "Copy as Markdown",
+    "F20": "Continue in new chat",
+    "F21": "Open side chat",
+    "F22": "Open project picker"
   },
   "encoderRotation": {
-    "leftTop": "Previous/next task",
-    "centerTop": "Page up/down",
-    "largeRight": "Reasoning depth down/up (Control-Option-Command-[ / Control-Option-Command-])"
+    "upperLeft": "Previous/next chat",
+    "upperRight": "Page up/down",
+    "largeLowerRight": "Reasoning effort down/up"
   },
   "encoderPress": {
-    "leftTop": "Search tasks",
-    "centerTop": "Command menu",
-    "largeRight": "Agent/model controls (Control-Option-Command-M)"
+    "upperLeft": "Search chats",
+    "upperRight": "Command menu",
+    "largeLowerRight": "Open model picker (F13)"
   },
+  "limitations": [
+    "Pure VIA cannot activate review-diff Accept or Reject buttons unless the app exposes corresponding keyboard-shortcut commands.",
+    "Approve request and Decline request act on active permission requests, not individual review diffs.",
+    "Custom commands may vary by ChatGPT desktop app version and account rollout. Leave a signal unbound if its named command is unavailable."
+  ],
   "notes": [
     "Assign Command-Option-F13 in Settings > Voice > Voice chat hotkey.",
-    "For effort bindings, turn or press the large-right knob while Codex is recording the shortcut; do not type the underlying chord manually.",
-    "F17-F24 are optional layer-button signals, not encoder directions.",
-    "Assign the effort/model chords and F17-F24 only when the named command appears in Settings > Keyboard Shortcuts.",
-    "No config.toml changes are required."
+    "Assign the effort chords and F13-F22 in Settings > Keyboard Shortcuts by performing the physical control while the shortcut recorder is active.",
+    "Direct F13 for Open model picker is distinct from modified Command-Option-F13 for Voice chat.",
+    "No config.toml changes, firmware flashing, Hammerspoon, or background automation are required."
   ]
 }
