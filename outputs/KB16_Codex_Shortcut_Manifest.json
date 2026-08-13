@@ -1,0 +1,53 @@
+{
+  "device": "KB16-01",
+  "platform": "macOS",
+  "targetApplication": "ChatGPT desktop app - Codex",
+  "version": "1.2",
+  "nativeShortcuts": {
+    "newTask": "Command-N",
+    "quickChat": "Command-Option-N",
+    "searchTasks": "Command-G",
+    "previousTask": "Command-Shift-[",
+    "nextTask": "Command-Shift-]",
+    "commandMenu": "Command-K",
+    "dictation": "Control-Shift-D",
+    "toggleSidebar": "Command-B",
+    "openFolder": "Command-O",
+    "openReview": "Control-Shift-G",
+    "toggleReviewPanel": "Command-Option-B",
+    "toggleTerminal": "Control-`",
+    "settings": "Command-,",
+    "keyboardShortcuts": "Command-Shift-/"
+  },
+  "customSignals": {
+    "Command-Option-F13": "Voice chat hotkey",
+    "Control-Option-Command-[": "Decrease reasoning depth",
+    "Control-Option-Command-]": "Increase reasoning depth",
+    "Control-Option-Command-M": "Open agent/model controls",
+    "F17": "Model selector",
+    "F18": "Mode selector",
+    "F19": "Accept selected change",
+    "F20": "Reject selected change",
+    "F21": "Previous review change",
+    "F22": "Next review change",
+    "F23": "Accept all changes",
+    "F24": "Reject all changes"
+  },
+  "encoderRotation": {
+    "leftTop": "Previous/next task",
+    "centerTop": "Page up/down",
+    "largeRight": "Reasoning depth down/up (Control-Option-Command-[ / Control-Option-Command-])"
+  },
+  "encoderPress": {
+    "leftTop": "Search tasks",
+    "centerTop": "Command menu",
+    "largeRight": "Agent/model controls (Control-Option-Command-M)"
+  },
+  "notes": [
+    "Assign Command-Option-F13 in Settings > Voice > Voice chat hotkey.",
+    "For effort bindings, turn or press the large-right knob while Codex is recording the shortcut; do not type the underlying chord manually.",
+    "F17-F24 are optional layer-button signals, not encoder directions.",
+    "Assign the effort/model chords and F17-F24 only when the named command appears in Settings > Keyboard Shortcuts.",
+    "No config.toml changes are required."
+  ]
+}
