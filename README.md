@@ -19,9 +19,12 @@ WORK is the highest-numbered layer, so holding it works correctly from CHAT, CON
 
 - [`outputs/KB16-01_Codex_Desktop_v1.layout.json`](outputs/KB16-01_Codex_Desktop_v1.layout.json) — current layout to import into VIA
 - [`outputs/KB16_Codex_Desktop_Setup.md`](outputs/KB16_Codex_Desktop_Setup.md) — complete setup, binding, recovery, and test guide
-- [`outputs/KB16_Codex_Desktop_Cheat_Sheet.svg`](outputs/KB16_Codex_Desktop_Cheat_Sheet.svg) — printable visual reference
+- [`outputs/KB16_Codex_Desktop_Cheat_Sheet.pdf`](outputs/KB16_Codex_Desktop_Cheat_Sheet.pdf) — print-ready two-page US Letter cheat sheet
+- [`outputs/KB16_Codex_Desktop_Cheat_Sheet.svg`](outputs/KB16_Codex_Desktop_Cheat_Sheet.svg) and [`outputs/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg`](outputs/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg) — editable map and reference pages
+- [`outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_1.png`](outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_1.png) and [`outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_2.png`](outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_2.png) — 150 dpi previews
 - [`outputs/KB16_Codex_Shortcut_Manifest.json`](outputs/KB16_Codex_Shortcut_Manifest.json) — machine-readable shortcut reference
 - [`scripts/validate_layout.py`](scripts/validate_layout.py) — dependency-free structural and consistency validator
+- [`scripts/build_cheat_sheet.py`](scripts/build_cheat_sheet.py) — source-driven SVG and PDF generator that fails on stale mappings
 - [`.agents/skills/personalize-kb16-work-prompts/SKILL.md`](.agents/skills/personalize-kb16-work-prompts/SKILL.md) — Codex skill for creating safe, role-specific WORK prompt packs
 - [`.agents/skills/build-kb16-cheat-sheet/SKILL.md`](.agents/skills/build-kb16-cheat-sheet/SKILL.md) — repository skill for generating and QAing future printable cheat sheets
 
@@ -51,6 +54,12 @@ Run:
 
 ```sh
 python3 scripts/validate_layout.py
+```
+
+To rebuild the editable cheat-sheet pages and PDF after a layout change, install ReportLab and run:
+
+```sh
+python3 scripts/build_cheat_sheet.py
 ```
 
 ## Status

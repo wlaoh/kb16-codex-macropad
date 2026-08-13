@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 1650 1275" role="img" aria-labelledby="title description">
+<title id="title">KB16 Codex Desktop cheat sheet</title>
+<desc id="description">Generated KB16 key map and reference page.</desc>
+<rect width="1650" height="1275" fill="#0A0B0D"/>
+<text x="45" y="65" text-anchor="start" style="font: 800 45px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">KB16 x CODEX</text>
+<text x="45" y="98" text-anchor="start" style="font: 500 19px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">PROMPTS / BINDINGS / OPERATING NOTES</text>
+<text x="1605" y="65" text-anchor="end" style="font: 800 19px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #36E9F5;">PAGE 2 / REFERENCE</text>
+<rect x="35" y="130" width="500" height="150" rx="20" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="59" y="168" text-anchor="start" style="font: 800 24px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">DICTATION</text>
+<text x="511" y="168" text-anchor="end" style="font: 800 20px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">Control-Shift-D</text>
+<text x="59" y="207" text-anchor="start" style="font: 500 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Inserts dictated text into the focused</text>
+<text x="59" y="231" text-anchor="start" style="font: 500 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">composer.</text>
+<rect x="575" y="130" width="500" height="150" rx="20" fill="#152D33" stroke="#36E9F5" stroke-width="2"/>
+<text x="599" y="168" text-anchor="start" style="font: 800 24px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #36E9F5;">TOGGLE VOICE</text>
+<text x="1051" y="168" text-anchor="end" style="font: 800 20px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">Control-Shift-V</text>
+<text x="599" y="207" text-anchor="start" style="font: 500 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Toggles voice chat while ChatGPT is focused.</text>
+<rect x="1115" y="130" width="500" height="150" rx="20" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="1139" y="168" text-anchor="start" style="font: 800 24px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">GLOBAL VOICE</text>
+<text x="1591" y="168" text-anchor="end" style="font: 800 20px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">Cmd-Opt-F13</text>
+<text x="1139" y="207" text-anchor="start" style="font: 500 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">User-bound hotkey that opens voice chat from</text>
+<text x="1139" y="231" text-anchor="start" style="font: 500 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">anywhere in macOS.</text>
+<rect x="35" y="315" width="750" height="870" rx="26" fill="#E8A11A" stroke="#FFC247" stroke-width="3"/>
+<text x="65" y="360" text-anchor="start" style="font: 800 27px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">ONE-TIME CUSTOM BINDINGS</text>
+<text x="65" y="389" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #6F3D00;">Record these physical signals in ChatGPT Settings.</text>
+<rect x="60" y="415" width="700" height="48" rx="8" fill="#111317"/>
+<text x="80" y="447" text-anchor="start" style="font: 800 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #36E9F5;">SIGNAL</text>
+<text x="300" y="447" text-anchor="start" style="font: 800 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #36E9F5;">CHATGPT COMMAND</text>
+<rect x="60" y="472" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="503" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Command-Option-F13</text>
+<text x="330" y="503" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Global voice chat hotkey</text>
+<rect x="60" y="523" width="700" height="47" rx="5" fill="#E8A11A"/>
+<text x="80" y="554" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Control-Option-Command-[</text>
+<text x="330" y="554" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Decrease reasoning effort</text>
+<rect x="60" y="574" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="605" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Control-Option-Command-]</text>
+<text x="330" y="605" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Increase reasoning effort</text>
+<rect x="60" y="625" width="700" height="47" rx="5" fill="#E8A11A"/>
+<text x="80" y="656" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F13</text>
+<text x="330" y="656" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Open model picker</text>
+<rect x="60" y="676" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="707" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F14</text>
+<text x="330" y="707" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Toggle plan mode</text>
+<rect x="60" y="727" width="700" height="47" rx="5" fill="#E8A11A"/>
+<text x="80" y="758" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F15</text>
+<text x="330" y="758" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Toggle Fast mode</text>
+<rect x="60" y="778" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="809" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F16</text>
+<text x="330" y="809" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Attach files and folders</text>
+<rect x="60" y="829" width="700" height="47" rx="5" fill="#E8A11A"/>
+<text x="80" y="860" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F17</text>
+<text x="330" y="860" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Approve request</text>
+<rect x="60" y="880" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="911" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F18</text>
+<text x="330" y="911" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Decline request</text>
+<rect x="60" y="931" width="700" height="47" rx="5" fill="#E8A11A"/>
+<text x="80" y="962" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F19</text>
+<text x="330" y="962" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Copy as Markdown</text>
+<rect x="60" y="982" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="1013" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F20</text>
+<text x="330" y="1013" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Continue in new chat</text>
+<rect x="60" y="1033" width="700" height="47" rx="5" fill="#E8A11A"/>
+<text x="80" y="1064" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F21</text>
+<text x="330" y="1064" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Open side chat</text>
+<rect x="60" y="1084" width="700" height="47" rx="5" fill="#F5B642"/>
+<text x="80" y="1115" text-anchor="start" style="font: 800 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">F22</text>
+<text x="330" y="1115" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #111317;">Open project picker</text>
+<text x="65" y="1135" text-anchor="start" style="font: 800 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #6F3D00;">F13 for Model Picker is distinct from Cmd-Opt-F13 for Global Voice.</text>
+<text x="65" y="1161" text-anchor="start" style="font: 800 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #6F3D00;">Approve / Decline act on permission requests, not individual review diffs.</text>
+<rect x="815" y="315" width="800" height="610" rx="26" fill="#14161A" stroke="#2D3239" stroke-width="2"/>
+<text x="845" y="360" text-anchor="start" style="font: 800 27px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #36E9F5;">WORK PROMPTS / EXACT INSERTED TEXT</text>
+<rect x="845" y="390" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="863" y="421" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">1. SUMMARIZE</text>
+<text x="863" y="449" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Summarize progress, blockers, and next</text>
+<text x="863" y="469" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">steps.</text>
+<rect x="1220" y="390" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="1238" y="421" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">2. IMPLEMENT</text>
+<text x="1238" y="449" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Implement the change. Preserve</text>
+<text x="1238" y="469" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">unrelated work and verify it.</text>
+<rect x="845" y="516" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="863" y="547" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">3. REVIEW ONLY</text>
+<text x="863" y="575" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Review changes for bugs, risks, and</text>
+<text x="863" y="595" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">missing tests. Do not edit.</text>
+<rect x="1220" y="516" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="1238" y="547" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">4. EXPLAIN</text>
+<text x="1238" y="575" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Explain the code or problem and its key</text>
+<text x="1238" y="595" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">tradeoffs.</text>
+<rect x="845" y="642" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="863" y="673" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">5. DIAGNOSE ONLY</text>
+<text x="863" y="701" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Diagnose the root cause. Do not edit;</text>
+<text x="863" y="721" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">report evidence and a fix.</text>
+<rect x="1220" y="642" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="1238" y="673" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">6. VERIFY</text>
+<text x="1238" y="701" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Run relevant tests. Investigate and</text>
+<text x="1238" y="721" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">summarize failures.</text>
+<rect x="845" y="768" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="863" y="799" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">7. UPDATE DOCS</text>
+<text x="863" y="827" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Update documentation for the current</text>
+<text x="863" y="847" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">change.</text>
+<rect x="1220" y="768" width="345" height="108" rx="14" fill="#17191D" stroke="#363A41" stroke-width="2"/>
+<text x="1238" y="799" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">8. PLAN FIRST</text>
+<text x="1238" y="827" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Propose a concise plan before editing.</text>
+<text x="845" y="900" text-anchor="start" style="font: 500 16px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Prompts insert text only. Review, diagnosis, and explanation prompts preserve their no-edit boundaries.</text>
+<rect x="815" y="950" width="800" height="235" rx="26" fill="#14161A" stroke="#2D3239" stroke-width="2"/>
+<text x="845" y="993" text-anchor="start" style="font: 800 25px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #36E9F5;">USE NOTES</text>
+<text x="850" y="1031" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #FFC247;">-</text>
+<text x="872" y="1031" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">Hold WORK from CHAT, CONTROL, or REVIEW; release to return to the</text>
+<text x="872" y="1051" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">previous mode.</text>
+<text x="850" y="1075" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #FFC247;">-</text>
+<text x="872" y="1075" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">Pure VIA cannot trigger per-diff Accept or Reject unless ChatGPT exposes</text>
+<text x="872" y="1095" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">bindable commands.</text>
+<text x="850" y="1119" text-anchor="start" style="font: 800 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #FFC247;">-</text>
+<text x="872" y="1119" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">If a custom command is unavailable in your app build, leave that signal</text>
+<text x="872" y="1139" text-anchor="start" style="font: 500 17px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #F7F4ED;">unbound.</text>
+<text x="1605" y="1248" text-anchor="end" style="font: 500 15px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; fill: #AEB5BE;">Verified against ChatGPT desktop build 26.803.61601 on 2026-08-13</text>
+</svg>
