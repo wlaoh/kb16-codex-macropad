@@ -36,12 +36,12 @@
 
     <g transform="translate(142 96)">
       <rect class="key" x="0" y="0" width="145" height="74" rx="12"/><text class="label" x="72" y="34">NEW CHAT</text>
-      <rect class="key" x="151" y="0" width="145" height="74" rx="12"/><text class="label" x="223" y="34">SEARCH</text>
+      <rect class="key" x="151" y="0" width="145" height="74" rx="12"/><text class="label" x="223" y="27"><tspan x="223">TOGGLE</tspan><tspan class="small" x="223" dy="21">VOICE</tspan></text>
       <rect class="key" x="302" y="0" width="145" height="74" rx="12"/><text class="label" x="374" y="34">QUICK CHAT</text>
       <rect class="key" x="453" y="0" width="145" height="74" rx="12"/><text class="label" x="525" y="27"><tspan x="525">COMMAND</tspan><tspan class="small" x="525" dy="21">MENU</tspan></text>
 
       <rect class="key" x="0" y="80" width="145" height="74" rx="12"/><text class="label" x="72" y="114">DICTATE</text>
-      <rect class="key" x="151" y="80" width="145" height="74" rx="12"/><text class="label" x="223" y="107"><tspan x="223">LIVE</tspan><tspan class="small" x="223" dy="21">VOICE</tspan></text>
+      <rect class="key" x="151" y="80" width="145" height="74" rx="12"/><text class="label" x="223" y="107"><tspan x="223">GLOBAL</tspan><tspan class="small" x="223" dy="21">VOICE</tspan></text>
       <rect class="key" x="302" y="80" width="145" height="74" rx="12"/><text class="label" x="374" y="114">SEND</text>
       <rect class="key" x="453" y="80" width="145" height="74" rx="12"/><text class="label" x="525" y="107"><tspan x="525">ESC</tspan><tspan class="small" x="525" dy="21">STOP</tspan></text>
 

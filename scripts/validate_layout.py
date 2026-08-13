@@ -93,6 +93,9 @@ def validate() -> list[str]:
                 errors,
             )
         require(len(layers[3]) > 15 and layers[3][15] == "KC_TRNS", "WORK hold position must be transparent on layer 3", errors)
+        require(layers[0][1] == "LCTL(LSFT(KC_V))", "CHAT Toggle Voice key must send Control-Shift-V", errors)
+        require(layers[0][4] == "LGUI(KC_G)", "upper-left encoder press must retain Search chats", errors)
+        require(layers[0][6] == "LGUI(LALT(KC_F13))", "CHAT Global Voice key must retain Command-Option-F13", errors)
 
         for layer_index, layer in enumerate(layers):
             for keycode in layer:
@@ -119,6 +122,7 @@ def validate() -> list[str]:
         flattened = {keycode for layer in layers for keycode in layer if isinstance(keycode, str)}
         required_keycodes = {
             "LGUI(LALT(KC_F13))",
+            "LCTL(LSFT(KC_V))",
             "LCTL(LALT(LGUI(KC_LBRC)))",
             "LCTL(LALT(LGUI(KC_RBRC)))",
             *(f"KC_F{number}" for number in range(13, 23)),
@@ -130,6 +134,8 @@ def validate() -> list[str]:
     require(manifest.get("layoutFile") == LAYOUT_PATH.name, "manifest layoutFile must name the current export", errors)
     hardware = manifest.get("hardware", {})
     require(hardware.get("vendorProductIdDecimal") == layout.get("vendorProductId"), "manifest and layout device IDs differ", errors)
+    native_shortcuts = manifest.get("nativeShortcuts", {})
+    require(native_shortcuts.get("toggleVoiceChat") == "Control-Shift-V", "manifest Toggle Voice shortcut is missing or stale", errors)
 
     expected_layers = {
         "1": (0, "CHAT", "default"),

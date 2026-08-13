@@ -4,7 +4,7 @@
   "layers": [
     [
       "LGUI(KC_N)",
-      "LGUI(KC_G)",
+      "LCTL(LSFT(KC_V))",
       "LGUI(LALT(KC_N))",
       "LGUI(KC_K)",
       "LGUI(KC_G)",

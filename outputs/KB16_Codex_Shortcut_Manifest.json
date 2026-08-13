@@ -27,6 +27,7 @@
     "nextChat": "Command-Shift-]",
     "commandMenu": "Command-K",
     "dictation": "Control-Shift-D",
+    "toggleVoiceChat": "Control-Shift-V",
     "toggleSidebar": "Command-B",
     "openFolder": "Command-O",
     "openReviewTab": "Control-Shift-G",
@@ -35,7 +36,7 @@
     "findInChat": "Command-F"
   },
   "customSignals": {
-    "Command-Option-F13": "Voice chat hotkey",
+    "Command-Option-F13": "Global voice chat hotkey",
     "Control-Option-Command-[": "Decrease reasoning effort",
     "Control-Option-Command-]": "Increase reasoning effort",
     "F13": "Open model picker",
@@ -65,7 +66,8 @@
     "Custom commands may vary by ChatGPT desktop app version and account rollout. Leave a signal unbound if its named command is unavailable."
   ],
   "notes": [
-    "Assign Command-Option-F13 in Settings > Voice > Voice chat hotkey.",
+    "Toggle Voice uses native Control-Shift-V while ChatGPT is focused; Global Voice uses the configurable Command-Option-F13 hotkey from anywhere.",
+    "Assign Command-Option-F13 in Settings > Voice > Voice chat hotkey by pressing the physical Global Voice key.",
     "Assign the effort chords and F13-F22 in Settings > Keyboard Shortcuts by performing the physical control while the shortcut recorder is active.",
     "Direct F13 for Open model picker is distinct from modified Command-Option-F13 for Voice chat.",
     "No config.toml changes, firmware flashing, Hammerspoon, or background automation are required."

@@ -42,13 +42,15 @@ WORK is deliberately layer 3, the highest layer. That makes its momentary mappin
 
 ## Configure ChatGPT desktop shortcuts
 
-Native shortcuts work immediately. Voice and CONTROL actions use uncommon signals that must be recorded once.
+Native shortcuts work immediately. Global Voice and CONTROL actions use uncommon signals that must be recorded once.
 
-### Live Voice
+### Voice controls
 
-Open **Settings → Voice → Voice chat hotkey**, activate the shortcut field, and press the physical **LIVE VOICE** key. It sends `Command-Option-F13`.
+**TOGGLE VOICE** sends the native `Control-Shift-V` shortcut. It toggles voice chat while the ChatGPT app is focused and requires no custom binding.
 
-Voice chat must begin in a new, empty chat or task. Dictation is separate and uses the native `Control-Shift-D` shortcut.
+**GLOBAL VOICE** works from anywhere in macOS. Open **Settings → Voice → Voice chat hotkey**, activate the shortcut field, and press the physical **GLOBAL VOICE** key. It sends `Command-Option-F13`.
+
+Voice chat must begin in a new, empty chat or task. Dictation is separate and uses the native `Control-Shift-D` shortcut. Search chats remains available by pressing the upper-left encoder.
 
 ### CONTROL signals
 
@@ -83,8 +85,8 @@ Direct `F13` for the model picker and modified `Command-Option-F13` for Voice ar
 
 | | Column 1 | Column 2 | Column 3 | Column 4 |
 |---|---|---|---|---|
-| Row 1 | New chat | Search chats | Quick chat | Command menu |
-| Row 2 | Dictation | Live Voice | Send | Escape / interrupt |
+| Row 1 | New chat | Toggle Voice | Quick chat | Command menu |
+| Row 2 | Dictation | Global Voice | Send | Escape / interrupt |
 | Row 3 | Sidebar | Open folder | Open Review | Terminal |
 | Row 4 | Hold WORK | Enter CONTROL | Enter REVIEW | Model picker |
 
@@ -144,7 +146,7 @@ Test the pad after loading and binding:
 2. Enter CONTROL and REVIEW; confirm the OLED shows `2` and `3`.
 3. Hold WORK from all three modes; confirm the OLED temporarily shows `4` and a macro key inserts text without submitting.
 4. Turn and press all three knobs in CHAT.
-5. In a new empty task, test Dictation and Live Voice separately.
+5. In a new empty task, test Dictation, Toggle Voice, and Global Voice separately. Confirm Global Voice also works while another app is focused.
 6. In CONTROL, test Model, Plan, Fast, Attach, Approve/Decline when a request is visible, and the handoff commands.
 7. Open Review and verify native review-panel navigation. Do not expect per-diff Accept/Reject buttons from pure VIA.
 
