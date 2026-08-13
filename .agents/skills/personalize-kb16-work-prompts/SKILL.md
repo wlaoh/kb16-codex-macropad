@@ -9,11 +9,11 @@ Tailor the eight prompt keys while preserving the validated KB16-01 keymap, laye
 
 ## Workflow
 
-1. Locate the source layout. Prefer `outputs/KB16-01_Codex_Desktop_v1.layout.json` in this repository unless the user names another KB16-01 layout.
+1. Locate the source layout. Prefer `config/KB16-01_Codex_Desktop_v1.layout.json` in this repository unless the user names another KB16-01 layout.
 2. Read [references/prompt-profile.md](references/prompt-profile.md) before drafting a profile.
 3. Infer the user's repeated workflows from the request. Ask one concise question only when the role or desired actions cannot be inferred safely.
 4. Draft exactly eight short labels and eight complete prompt strings. Put the highest-frequency actions in the top row and make read-only versus editing behavior explicit.
-5. Save the reusable profile as JSON. Default to `outputs/profiles/<profile-name>.work-prompts.json` in this repository.
+5. Save the reusable profile as JSON. Default to `profiles/<profile-name>.work-prompts.json` in this repository.
 6. Run a dry check before writing a layout:
 
    ```sh
@@ -23,7 +23,7 @@ Tailor the eight prompt keys while preserving the validated KB16-01 keymap, laye
      --dry-run
    ```
 
-7. Generate a separate personalized layout and Markdown prompt map. Do not overwrite the canonical layout unless the user explicitly asks to replace the default.
+7. Generate a separate personalized layout and Markdown prompt map under `personalized/`. Do not overwrite the canonical layout unless the user explicitly asks to replace the default.
 
    ```sh
    python3 <skill-dir>/scripts/personalize_work_prompts.py \

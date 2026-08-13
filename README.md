@@ -15,14 +15,19 @@ The current v1 layout fixes cross-layer access, uses only current bindable ChatG
 
 WORK is the highest-numbered layer, so holding it works correctly from CHAT, CONTROL, and REVIEW.
 
-## Files
+## Repository layout
 
-- [`outputs/KB16-01_Codex_Desktop_v1.layout.json`](outputs/KB16-01_Codex_Desktop_v1.layout.json) — current layout to import into VIA
-- [`outputs/KB16_Codex_Desktop_Setup.md`](outputs/KB16_Codex_Desktop_Setup.md) — complete setup, binding, recovery, and test guide
-- [`outputs/KB16_Codex_Desktop_Cheat_Sheet.pdf`](outputs/KB16_Codex_Desktop_Cheat_Sheet.pdf) — print-ready two-page US Letter cheat sheet
-- [`outputs/KB16_Codex_Desktop_Cheat_Sheet.svg`](outputs/KB16_Codex_Desktop_Cheat_Sheet.svg) and [`outputs/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg`](outputs/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg) — editable map and reference pages
-- [`outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_1.png`](outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_1.png) and [`outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_2.png`](outputs/KB16_Codex_Desktop_Cheat_Sheet_Page_2.png) — 150 dpi previews
-- [`outputs/KB16_Codex_Shortcut_Manifest.json`](outputs/KB16_Codex_Shortcut_Manifest.json) — machine-readable shortcut reference
+- [`config/`](config/) contains the canonical VIA layout and machine-readable shortcut manifest.
+- [`docs/KB16_Codex_Desktop_Setup.md`](docs/KB16_Codex_Desktop_Setup.md) is the complete setup, binding, recovery, and test guide.
+- [`docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.pdf`](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.pdf) is the print-ready two-page US Letter cheat sheet. The same folder contains the editable SVG pages and [`previews/`](docs/cheat-sheet/previews/) contains 150 dpi PNG renders.
+- [`scripts/`](scripts/) contains the source-driven cheat-sheet builder and dependency-free layout validator.
+- [`.agents/skills/`](.agents/skills/) contains the repository-specific Codex workflows for maintaining the cheat sheet and personalizing WORK prompts.
+
+Key files:
+
+- [`config/KB16-01_Codex_Desktop_v1.layout.json`](config/KB16-01_Codex_Desktop_v1.layout.json) — current layout to import into VIA
+- [`config/KB16_Codex_Shortcut_Manifest.json`](config/KB16_Codex_Shortcut_Manifest.json) — machine-readable shortcut reference
+- [`docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.svg`](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.svg) and [`docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg`](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg) — editable cheat-sheet pages
 - [`scripts/validate_layout.py`](scripts/validate_layout.py) — dependency-free structural and consistency validator
 - [`scripts/build_cheat_sheet.py`](scripts/build_cheat_sheet.py) — source-driven SVG and PDF generator that fails on stale mappings
 - [`.agents/skills/personalize-kb16-work-prompts/SKILL.md`](.agents/skills/personalize-kb16-work-prompts/SKILL.md) — Codex skill for creating safe, role-specific WORK prompt packs
@@ -32,7 +37,7 @@ WORK is the highest-numbered layer, so holding it works correctly from CHAT, CON
 
 1. Connect the wired KB16-01 and open [VIA](https://usevia.app/) in a Chromium-based browser.
 2. Back up the current device layout.
-3. Load `outputs/KB16-01_Codex_Desktop_v1.layout.json`.
+3. Load `config/KB16-01_Codex_Desktop_v1.layout.json`.
 4. Follow the setup guide to bind Global Voice and the `F13`–`F22` control signals. Toggle Voice works natively.
 5. Print or keep the cheat sheet nearby while the layout becomes familiar.
 

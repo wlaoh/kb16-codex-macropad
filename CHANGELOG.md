@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Reorganized the canonical layout and manifest under `config/`, setup documentation under `docs/`, and generated cheat-sheet artifacts under `docs/cheat-sheet/`.
+- Updated validators, builders, repository skills, and README links for the new paths.
+
 ## 2026-08-13
 
 - Created the initial pure-VIA Codex macropad layout.

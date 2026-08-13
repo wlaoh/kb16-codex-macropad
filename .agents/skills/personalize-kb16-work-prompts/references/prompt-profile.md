@@ -81,8 +81,8 @@ Use a JSON profile to keep prompt intent separate from the VIA layout export. Th
 Use a recoverable source and a recognizable personalized output, for example:
 
 ```text
-outputs/KB16-01_Codex_Desktop_v1.layout.json
-outputs/profiles/python-maintainer.work-prompts.json
-outputs/KB16-01_Codex_Desktop_v1.python-maintainer.layout.json
-outputs/KB16-01_Codex_Desktop_v1.python-maintainer.prompts.md
+config/KB16-01_Codex_Desktop_v1.layout.json
+profiles/python-maintainer.work-prompts.json
+personalized/KB16-01_Codex_Desktop_v1.python-maintainer.layout.json
+personalized/KB16-01_Codex_Desktop_v1.python-maintainer.prompts.md
 ```

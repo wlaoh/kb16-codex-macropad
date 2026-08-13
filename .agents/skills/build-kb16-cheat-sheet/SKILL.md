@@ -13,15 +13,15 @@ the authority for what the device emits; use prose sources to name those signals
 1. Inspect repository instructions and `git status`. Preserve unrelated work.
 2. Read `layoutFile` from the shortcut manifest and use that file when it exists.
    If the manifest omits it, select the highest numeric-version canonical
-   `outputs/KB16-01_Codex_Desktop_v*.layout.json`. Pair it with the current setup
+   `config/KB16-01_Codex_Desktop_v*.layout.json`. Pair it with the current setup
    guide, manifest, and matching visual artifacts. Do not select by modification
    time alone or treat a personalized layout as canonical unless the user names it.
 3. Read [references/kb16-via-layout.md](references/kb16-via-layout.md), then run:
 
    ```sh
    python3 .agents/skills/build-kb16-cheat-sheet/scripts/inspect_layout.py \
-     --layout outputs/KB16-01_Codex_Desktop_v1.layout.json \
-     --manifest outputs/KB16_Codex_Shortcut_Manifest.json \
+     --layout config/KB16-01_Codex_Desktop_v1.layout.json \
+     --manifest config/KB16_Codex_Shortcut_Manifest.json \
      --format markdown --strict
    ```
 

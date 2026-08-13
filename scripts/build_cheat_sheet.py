@@ -398,10 +398,10 @@ def write_pdf(path: Path, layout: dict, manifest: dict) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--layout", type=Path, default=Path("outputs/KB16-01_Codex_Desktop_v1.layout.json"))
-    parser.add_argument("--manifest", type=Path, default=Path("outputs/KB16_Codex_Shortcut_Manifest.json"))
-    parser.add_argument("--setup", type=Path, default=Path("outputs/KB16_Codex_Desktop_Setup.md"))
-    parser.add_argument("--output-dir", type=Path, default=Path("outputs"))
+    parser.add_argument("--layout", type=Path, default=Path("config/KB16-01_Codex_Desktop_v1.layout.json"))
+    parser.add_argument("--manifest", type=Path, default=Path("config/KB16_Codex_Shortcut_Manifest.json"))
+    parser.add_argument("--setup", type=Path, default=Path("docs/KB16_Codex_Desktop_Setup.md"))
+    parser.add_argument("--output-dir", type=Path, default=Path("docs/cheat-sheet"))
     return parser
 
 

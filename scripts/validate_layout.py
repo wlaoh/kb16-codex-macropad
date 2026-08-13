@@ -10,10 +10,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LAYOUT_PATH = ROOT / "outputs" / "KB16-01_Codex_Desktop_v1.layout.json"
-MANIFEST_PATH = ROOT / "outputs" / "KB16_Codex_Shortcut_Manifest.json"
+LAYOUT_PATH = ROOT / "config" / "KB16-01_Codex_Desktop_v1.layout.json"
+MANIFEST_PATH = ROOT / "config" / "KB16_Codex_Shortcut_Manifest.json"
 README_PATH = ROOT / "README.md"
-SETUP_PATH = ROOT / "outputs" / "KB16_Codex_Desktop_Setup.md"
+SETUP_PATH = ROOT / "docs" / "KB16_Codex_Desktop_Setup.md"
 
 
 def load_json(path: Path, errors: list[str]) -> dict:
