@@ -17,3 +17,5 @@
 - Added the one-based OLED to zero-based VIA layer legend.
 - Corrected the physical knob descriptions to match the KB16 chassis.
 - Added a printable visual cheat sheet, machine-readable shortcut manifest, validation script, and CI check.
+- Moved previous/next task navigation and Search chats to the large dial; moved effort and model selection to the upper-left knob.
+- Replaced the bare `F13` model-picker signal with the recordable `Control-Option-Command-M` chord while preserving `Command-Option-F13` for Global Voice.

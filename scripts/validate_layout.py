@@ -94,7 +94,12 @@ def validate() -> list[str]:
             )
         require(len(layers[3]) > 15 and layers[3][15] == "KC_TRNS", "WORK hold position must be transparent on layer 3", errors)
         require(layers[0][1] == "LCTL(LSFT(KC_V))", "CHAT Toggle Voice key must send Control-Shift-V", errors)
-        require(layers[0][4] == "LGUI(KC_G)", "upper-left encoder press must retain Search chats", errors)
+        require(
+            layers[0][4] == "LCTL(LALT(LGUI(KC_M)))",
+            "upper-left encoder press must send the model-picker chord",
+            errors,
+        )
+        require(layers[0][14] == "LGUI(KC_G)", "large-dial press must send Search chats", errors)
         require(layers[0][6] == "LGUI(LALT(KC_F13))", "CHAT Global Voice key must retain Command-Option-F13", errors)
 
         for layer_index, layer in enumerate(layers):
@@ -123,13 +128,18 @@ def validate() -> list[str]:
         required_keycodes = {
             "LGUI(LALT(KC_F13))",
             "LCTL(LSFT(KC_V))",
+            "LCTL(LALT(LGUI(KC_M)))",
             "LCTL(LALT(LGUI(KC_LBRC)))",
             "LCTL(LALT(LGUI(KC_RBRC)))",
-            *(f"KC_F{number}" for number in range(13, 23)),
+            *(f"KC_F{number}" for number in range(14, 23)),
         }
         for keycode in sorted(required_keycodes):
             require(keycode in flattened, f"required custom signal {keycode} is absent", errors)
-        require("KC_F23" not in flattened and "KC_F24" not in flattened, "unassigned F23/F24 must not appear", errors)
+        require(
+            not {"KC_F13", "KC_F23", "KC_F24"} & flattened,
+            "unassigned bare F13/F23/F24 signals must not appear",
+            errors,
+        )
 
     require(manifest.get("layoutFile") == LAYOUT_PATH.name, "manifest layoutFile must name the current export", errors)
     hardware = manifest.get("hardware", {})
@@ -154,7 +164,8 @@ def validate() -> list[str]:
         "Command-Option-F13",
         "Control-Option-Command-[",
         "Control-Option-Command-]",
-        *(f"F{number}" for number in range(13, 23)),
+        "Control-Option-Command-M",
+        *(f"F{number}" for number in range(14, 23)),
     }
     custom_signals = manifest.get("customSignals", {})
     require(set(custom_signals) == expected_custom_signals, "manifest custom signal set is incomplete or stale", errors)

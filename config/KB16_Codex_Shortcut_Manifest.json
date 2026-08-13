@@ -39,7 +39,7 @@
     "Command-Option-F13": "Global voice chat hotkey",
     "Control-Option-Command-[": "Decrease reasoning effort",
     "Control-Option-Command-]": "Increase reasoning effort",
-    "F13": "Open model picker",
+    "Control-Option-Command-M": "Open model picker",
     "F14": "Toggle plan mode",
     "F15": "Toggle Fast mode",
     "F16": "Attach files and folders",
@@ -51,14 +51,14 @@
     "F22": "Open project picker"
   },
   "encoderRotation": {
-    "upperLeft": "Previous/next chat",
+    "upperLeft": "Reasoning effort down/up",
     "upperRight": "Page up/down",
-    "largeLowerRight": "Reasoning effort down/up"
+    "largeLowerRight": "Previous/next chat"
   },
   "encoderPress": {
-    "upperLeft": "Search chats",
+    "upperLeft": "Open model picker (Control-Option-Command-M)",
     "upperRight": "Command menu",
-    "largeLowerRight": "Open model picker (F13)"
+    "largeLowerRight": "Search chats"
   },
   "limitations": [
     "Pure VIA cannot activate review-diff Accept or Reject buttons unless the app exposes corresponding keyboard-shortcut commands.",
@@ -68,8 +68,8 @@
   "notes": [
     "Toggle Voice uses native Control-Shift-V while ChatGPT is focused; Global Voice uses the configurable Command-Option-F13 hotkey from anywhere.",
     "Assign Command-Option-F13 in Settings > Voice > Voice chat hotkey by pressing the physical Global Voice key.",
-    "Assign the effort chords and F13-F22 in Settings > Keyboard Shortcuts by performing the physical control while the shortcut recorder is active.",
-    "Direct F13 for Open model picker is distinct from modified Command-Option-F13 for Voice chat.",
+    "Assign the effort chords, Control-Option-Command-M, and F14-F22 in Settings > Keyboard Shortcuts by performing the physical control while the shortcut recorder is active.",
+    "Control-Option-Command-M for Open model picker is distinct from Command-Option-F13 for Voice chat.",
     "No config.toml changes, firmware flashing, Hammerspoon, or background automation are required."
   ]
 }

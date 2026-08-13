@@ -50,7 +50,7 @@ Native shortcuts work immediately. Global Voice and CONTROL actions use uncommon
 
 **GLOBAL VOICE** works from anywhere in macOS. Open **Settings → Voice → Voice chat hotkey**, activate the shortcut field, and press the physical **GLOBAL VOICE** key. It sends `Command-Option-F13`.
 
-Voice chat must begin in a new, empty chat or task. Dictation is separate and uses the native `Control-Shift-D` shortcut. Search chats remains available by pressing the upper-left encoder.
+Voice chat must begin in a new, empty chat or task. Dictation is separate and uses the native `Control-Shift-D` shortcut. Search chats remains available by pressing the large dial.
 
 ### CONTROL signals
 
@@ -58,9 +58,9 @@ Open **Settings → Keyboard Shortcuts**. For each available command below, sear
 
 | Physical control | Signal | Exact command name |
 |---|---|---|
-| Large dial counterclockwise | `⌃⌥⌘[` | Decrease reasoning effort |
-| Large dial clockwise | `⌃⌥⌘]` | Increase reasoning effort |
-| Press large dial | `F13` | Open model picker |
+| Upper-left knob counterclockwise | `⌃⌥⌘[` | Decrease reasoning effort |
+| Upper-left knob clockwise | `⌃⌥⌘]` | Increase reasoning effort |
+| Press upper-left knob or a Model picker key | `⌃⌥⌘M` | Open model picker |
 | CONTROL row 1, column 4 | `F14` | Toggle plan mode |
 | CONTROL row 2, column 1 | `F15` | Toggle Fast mode |
 | CONTROL row 2, column 2 | `F16` | Attach files and folders |
@@ -71,15 +71,15 @@ Open **Settings → Keyboard Shortcuts**. For each available command below, sear
 | CONTROL row 3, column 3 | `F21` | Open side chat |
 | CONTROL row 3, column 1 | `F22` | Open project picker |
 
-Direct `F13` for the model picker and modified `Command-Option-F13` for Voice are separate signals. If a named command is unavailable in your app build or account, leave that signal unbound.
+`Control-Option-Command-M` for the model picker and `Command-Option-F13` for Voice are separate signals. If a named command is unavailable in your app build or account, leave that signal unbound.
 
 ## Knobs — every mode
 
 | Physical control | Counterclockwise | Press | Clockwise |
 |---|---|---|---|
-| Upper-left small knob | Previous chat | Search chats | Next chat |
+| Upper-left small knob | Effort down | Model picker | Effort up |
 | Upper-right small knob | Page up | Command menu | Page down |
-| Large lower-right dial | Effort down | Model picker | Effort up |
+| Large lower-right dial | Previous chat | Search chats | Next chat |
 
 ## OLED 1 — CHAT
 

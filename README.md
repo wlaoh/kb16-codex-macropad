@@ -38,7 +38,7 @@ Key files:
 1. Connect the wired KB16-01 and open [VIA](https://usevia.app/) in a Chromium-based browser.
 2. Back up the current device layout.
 3. Load `config/KB16-01_Codex_Desktop_v1.layout.json`.
-4. Follow the setup guide to bind Global Voice and the `F13`–`F22` control signals. Toggle Voice works natively.
+4. Follow the setup guide to bind Global Voice, the Model Picker chord, and the `F14`–`F22` control signals. Toggle Voice works natively.
 5. Print or keep the cheat sheet nearby while the layout becomes familiar.
 
 The layout targets USB ID `0xD010:0x1601`. The native shortcuts were checked against the OpenAI command reference, and optional control commands were verified against ChatGPT desktop app build `26.803.61601` on 2026-08-13.

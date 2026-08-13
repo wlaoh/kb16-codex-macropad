@@ -48,12 +48,12 @@ KEYS: tuple[tuple[tuple[str, str], ...], ...] = (
         ("HOLD\nWORK", "MO(3)"),
         ("CONTROL", "TO(1)"),
         ("REVIEW", "TO(2)"),
-        ("MODEL\nPICKER", "KC_F13"),
+        ("MODEL\nPICKER", "LCTL(LALT(LGUI(KC_M)))"),
     ),
     (
         ("EFFORT -", "LCTL(LALT(LGUI(KC_LBRC)))"),
         ("EFFORT +", "LCTL(LALT(LGUI(KC_RBRC)))"),
-        ("MODEL\nPICKER", "KC_F13"),
+        ("MODEL\nPICKER", "LCTL(LALT(LGUI(KC_M)))"),
         ("PLAN\nMODE", "KC_F14"),
         ("FAST\nMODE", "KC_F15"),
         ("ATTACH\nFILES", "KC_F16"),
@@ -109,8 +109,8 @@ KEYS: tuple[tuple[tuple[str, str], ...], ...] = (
 ENCODERS = (
     (
         "UPPER-LEFT",
-        ("PREVIOUS CHAT", "SEARCH CHATS", "NEXT CHAT"),
-        ("LGUI(LSFT(KC_LBRC))", "LGUI(KC_G)", "LGUI(LSFT(KC_RBRC))"),
+        ("EFFORT -", "MODEL PICKER", "EFFORT +"),
+        ("LCTL(LALT(LGUI(KC_LBRC)))", "LCTL(LALT(LGUI(KC_M)))", "LCTL(LALT(LGUI(KC_RBRC)))"),
     ),
     (
         "UPPER-RIGHT",
@@ -119,8 +119,8 @@ ENCODERS = (
     ),
     (
         "LARGE DIAL",
-        ("EFFORT -", "MODEL PICKER", "EFFORT +"),
-        ("LCTL(LALT(LGUI(KC_LBRC)))", "KC_F13", "LCTL(LALT(LGUI(KC_RBRC)))"),
+        ("PREVIOUS CHAT", "SEARCH CHATS", "NEXT CHAT"),
+        ("LGUI(LSFT(KC_LBRC))", "LGUI(KC_G)", "LGUI(LSFT(KC_RBRC))"),
     ),
 )
 
@@ -193,6 +193,8 @@ def validate_sources(layout: dict, manifest: dict, setup_text: str, layout_path:
         errors.append("voice native-shortcut metadata is missing or stale")
     if manifest.get("customSignals", {}).get("Command-Option-F13") != "Global voice chat hotkey":
         errors.append("global voice custom signal is missing or stale")
+    if manifest.get("customSignals", {}).get("Control-Option-Command-M") != "Open model picker":
+        errors.append("model-picker custom signal is missing or stale")
 
     for phrase in ("Toggle Voice", "Global Voice", "Search chats", "WORK, momentary"):
         if phrase not in setup_text:
@@ -336,7 +338,7 @@ def draw_page_two(renderer: SvgRenderer | PdfRenderer, layout: dict, manifest: d
         renderer.rect(60, row_y + row * 51, 700, 47, fill, radius=5)
         renderer.text(80, row_y + row * 51 + 31, signal, 17, INK, bold=True)
         renderer.text(330, row_y + row * 51 + 31, command, 17, INK)
-    renderer.text(65, 1135, "F13 for Model Picker is distinct from Cmd-Opt-F13 for Global Voice.", 16, BROWN, bold=True)
+    renderer.text(65, 1135, "Ctrl-Opt-Cmd-M opens Model Picker; Cmd-Opt-F13 remains Global Voice.", 16, BROWN, bold=True)
     renderer.text(65, 1161, "Approve / Decline act on permission requests, not individual review diffs.", 16, BROWN, bold=True)
 
     renderer.rect(815, 315, 800, 610, "#14161A", "#2D3239", 2, 26)
