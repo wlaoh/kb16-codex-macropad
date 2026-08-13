@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personalize KB16 Work Prompts"
+  short_description: "Tailor KB16 WORK-layer prompt macros"
+  default_prompt: "Use $personalize-kb16-work-prompts to tailor the eight WORK-layer macros for my workflow."

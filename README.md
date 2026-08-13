@@ -22,6 +22,7 @@ WORK is the highest-numbered layer, so holding it works correctly from CHAT, CON
 - [`outputs/KB16_Codex_Desktop_v2_Cheat_Sheet.svg`](outputs/KB16_Codex_Desktop_v2_Cheat_Sheet.svg) — printable visual reference
 - [`outputs/KB16_Codex_Shortcut_Manifest.json`](outputs/KB16_Codex_Shortcut_Manifest.json) — machine-readable v2 reference
 - [`scripts/validate_layout.py`](scripts/validate_layout.py) — dependency-free structural and consistency validator
+- [`.agents/skills/personalize-kb16-work-prompts/SKILL.md`](.agents/skills/personalize-kb16-work-prompts/SKILL.md) — Codex skill for creating safe, role-specific WORK prompt packs
 - [`outputs/KB16-01_Codex_Desktop_v1.layout.json`](outputs/KB16-01_Codex_Desktop_v1.layout.json) — retained legacy v1 backup
 
 ## Quick start
@@ -33,6 +34,16 @@ WORK is the highest-numbered layer, so holding it works correctly from CHAT, CON
 5. Print or keep the cheat sheet nearby while the layout becomes familiar.
 
 The layout targets USB ID `0xD010:0x1601`. The native shortcuts were checked against the OpenAI command reference, and optional control commands were verified against ChatGPT desktop app build `26.803.61601` on 2026-08-13.
+
+## Personalize WORK prompts
+
+This repository includes a Codex skill that turns a description of your repeated workflows into eight labeled WORK prompts, a reusable profile, a versioned VIA layout, and a Markdown prompt map. Invoke it from a Codex task in this repository, for example:
+
+```text
+$personalize-kb16-work-prompts Make the WORK layer fit my Python debugging workflow.
+```
+
+The skill preserves the source layout by default, verifies that only macro slots 0–7 changed, rejects auto-submitting control characters, and enforces the conservative 512-byte macro-storage ceiling.
 
 ## Validate
 
