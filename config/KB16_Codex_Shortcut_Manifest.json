@@ -61,15 +61,15 @@
     "largeLowerRight": "Search chats"
   },
   "limitations": [
-    "Pure VIA cannot activate review-diff Accept or Reject buttons unless the app exposes corresponding keyboard-shortcut commands.",
-    "Approve request and Decline request act on active permission requests, not individual review diffs.",
-    "Custom commands may vary by ChatGPT desktop app version and account rollout. Leave a signal unbound if its named command is unavailable."
+    "VIA cannot activate per-diff Accept or Reject buttons unless the app exposes matching keyboard commands.",
+    "Approve request and Decline request act on permission requests, not individual review diffs.",
+    "Custom commands depend on the ChatGPT desktop app version and account rollout. Leave unavailable commands unbound."
   ],
   "notes": [
-    "Toggle Voice uses native Control-Shift-V while ChatGPT is focused; Global Voice uses the configurable Command-Option-F13 hotkey from anywhere.",
-    "Assign Command-Option-F13 in Settings > Voice > Voice chat hotkey by pressing the physical Global Voice key.",
-    "Assign the effort chords, Control-Option-Command-M, and F14-F22 in Settings > Keyboard Shortcuts by performing the physical control while the shortcut recorder is active.",
-    "Control-Option-Command-M for Open model picker is distinct from Command-Option-F13 for Voice chat.",
-    "No config.toml changes, firmware flashing, Hammerspoon, or background automation are required."
+    "Toggle Voice uses Control-Shift-V while ChatGPT is focused; Global Voice uses the configurable Command-Option-F13 hotkey from anywhere.",
+    "Bind Command-Option-F13 in Settings > Voice > Voice chat hotkey by pressing the Global Voice key.",
+    "Bind the effort chords, Control-Option-Command-M, and F14-F22 in Settings > Keyboard Shortcuts with the shortcut recorder.",
+    "Control-Option-Command-M opens Model Picker; Command-Option-F13 remains the Voice hotkey.",
+    "The layout requires no firmware changes, config.toml edits, Hammerspoon rules, or background automation."
   ]
 }

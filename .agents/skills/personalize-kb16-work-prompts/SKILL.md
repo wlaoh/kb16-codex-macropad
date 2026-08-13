@@ -1,20 +1,20 @@
 ---
 name: personalize-kb16-work-prompts
-description: Personalize the eight WORK-layer text macros in the KB16-01 Codex Desktop VIA .layout.json, generate a reusable prompt profile and prompt map, and verify that hardware mappings remain unchanged. Use when a user asks to change, rewrite, tailor, replace, or create KB16 WORK prompts, prompt buttons, macro text, or a role-specific prompt pack. Do not use for other keyboards, firmware flashing, arbitrary key remapping, or Codex shortcut changes.
+description: Personalize the eight WORK-layer macros in a KB16-01 Codex Desktop VIA layout, create a reusable prompt profile and prompt map, and verify that no hardware mapping changed. Use for KB16 WORK prompts, prompt buttons, macro text, and role-specific prompt packs. Do not use for other keyboards, firmware, key remapping, or shortcut changes.
 ---
 
-# Personalize KB16 WORK Prompts
+# Personalize KB16 WORK prompts
 
-Tailor the eight prompt keys while preserving the validated KB16-01 keymap, layer behavior, encoders, shortcuts, and conservative firmware limits.
+Change only macro slots 0-7. Preserve the validated keymap, layers, encoders, shortcuts, and firmware limits.
 
 ## Workflow
 
-1. Locate the source layout. Prefer `config/KB16-01_Codex_Desktop_v1.layout.json` in this repository unless the user names another KB16-01 layout.
-2. Read [references/prompt-profile.md](references/prompt-profile.md) before drafting a profile.
-3. Infer the user's repeated workflows from the request. Ask one concise question only when the role or desired actions cannot be inferred safely.
-4. Draft exactly eight short labels and eight complete prompt strings. Put the highest-frequency actions in the top row and make read-only versus editing behavior explicit.
-5. Save the reusable profile as JSON. Default to `profiles/<profile-name>.work-prompts.json` in this repository.
-6. Run a dry check before writing a layout:
+1. Use `config/KB16-01_Codex_Desktop_v1.layout.json` unless the user names another KB16-01 layout.
+2. Read [references/prompt-profile.md](references/prompt-profile.md).
+3. Infer the repeated workflows from the request. Ask one short question only if the role or desired actions remain unclear.
+4. Write exactly eight labels and eight complete prompts. Put frequent actions in the first row and state whether each prompt permits editing.
+5. Save the profile as `profiles/<profile-name>.work-prompts.json` unless the user provides another path.
+6. Validate the profile without writing a layout:
 
    ```sh
    python3 <skill-dir>/scripts/personalize_work_prompts.py \
@@ -23,7 +23,7 @@ Tailor the eight prompt keys while preserving the validated KB16-01 keymap, laye
      --dry-run
    ```
 
-7. Generate a separate personalized layout and Markdown prompt map under `personalized/`. Do not overwrite the canonical layout unless the user explicitly asks to replace the default.
+7. Write a separate layout and prompt map under `personalized/`:
 
    ```sh
    python3 <skill-dir>/scripts/personalize_work_prompts.py \
@@ -33,7 +33,8 @@ Tailor the eight prompt keys while preserving the validated KB16-01 keymap, laye
      --prompt-map <personalized-prompts.md>
    ```
 
-8. Validate that only macro slots 0-7 changed:
+   Overwrite the canonical layout only when the user explicitly requests it.
+8. Confirm that no field except `macros[0:8]` changed:
 
    ```sh
    python3 <skill-dir>/scripts/validate_personalized_layout.py \
@@ -42,18 +43,18 @@ Tailor the eight prompt keys while preserving the validated KB16-01 keymap, laye
      --profile <profile.work-prompts.json>
    ```
 
-9. If the personalized layout becomes the repository default, update the setup guide, shortcut manifest if it gains prompt metadata, and cheat-sheet labels to match. Otherwise leave shared documentation unchanged and deliver the generated prompt map with the personalized layout.
+9. If the personalized layout becomes the default, update the setup guide, any prompt metadata in the manifest, and cheat-sheet labels. Otherwise leave shared documentation unchanged.
 
-## Safety Rules
+## Constraints
 
 - Preserve every layout field except `macros[0:8]`.
-- Keep all sixteen VIA macro slots, including terminators, at or below 512 UTF-8 bytes. Aim to leave at least 32 bytes free for later wording changes.
-- Use printable ASCII in macro text. Do not add newlines, carriage returns, tabs, or other control characters.
-- Never append Return or otherwise make a prompt submit itself.
-- Keep prompt labels at 18 characters or fewer.
-- Make mutation boundaries explicit: prompts such as review or diagnosis should say when not to edit.
-- Write a new output file by default and preserve the source as a recovery point.
+- Keep all 16 macro slots, including terminators, at or below 512 UTF-8 bytes; leave at least 32 bytes free when possible.
+- Use printable ASCII with no tabs, newlines, carriage returns, or other control characters.
+- Do not add Return or any auto-submit behavior.
+- Keep labels at 18 characters or fewer.
+- State no-edit boundaries in review, explanation, and diagnosis prompts.
+- Write a new layout by default so the source remains recoverable.
 
 ## Handoff
 
-Report the profile name, output paths, macro-byte usage, and validation result. Remind the user that the generated layout still needs to be loaded into VIA and that prompt macros insert text without submitting it.
+Report the profile name, output paths, macro-byte usage, and validation result. Note that the user must still load the new layout into VIA and that macros insert text without submitting it.

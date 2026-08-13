@@ -1,4 +1,4 @@
 interface:
   display_name: "Build KB16 Cheat Sheet"
-  short_description: "Create verified printable KB16 control guides"
-  default_prompt: "Use $build-kb16-cheat-sheet to create a polished printable cheat sheet from the current canonical KB16 layout."
+  short_description: "Build a verified printable KB16 guide"
+  default_prompt: "Use $build-kb16-cheat-sheet to build the printable guide from the canonical KB16 layout."

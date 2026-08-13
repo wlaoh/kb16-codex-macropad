@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the KB16 Codex cheat-sheet SVG pages and combined PDF from source data."""
+"""Build the KB16 cheat-sheet SVG pages and PDF from canonical source data."""
 
 from __future__ import annotations
 
@@ -323,11 +323,11 @@ def draw_page_two(renderer: SvgRenderer | PdfRenderer, layout: dict, manifest: d
     native = manifest["nativeShortcuts"]
     draw_voice_card(renderer, 35, "DICTATION", native["dictation"], "Inserts dictated text into the focused composer.")
     draw_voice_card(renderer, 575, "TOGGLE VOICE", native["toggleVoiceChat"], "Toggles voice chat while ChatGPT is focused.", accent=True)
-    draw_voice_card(renderer, 1115, "GLOBAL VOICE", "Cmd-Opt-F13", "User-bound hotkey that opens voice chat from anywhere in macOS.")
+    draw_voice_card(renderer, 1115, "GLOBAL VOICE", "Cmd-Opt-F13", "Configurable voice hotkey that works anywhere in macOS.")
 
     renderer.rect(35, 315, 750, 870, PANEL, PANEL_STROKE, 3, 26)
     renderer.text(65, 360, "ONE-TIME CUSTOM BINDINGS", 27, INK, bold=True)
-    renderer.text(65, 389, "Record these physical signals in ChatGPT Settings.", 17, BROWN, bold=True)
+    renderer.text(65, 389, "Record these signals in Settings > Keyboard Shortcuts.", 17, BROWN, bold=True)
     renderer.rect(60, 415, 700, 48, INK, radius=8)
     renderer.text(80, 447, "SIGNAL", 16, CYAN, bold=True)
     renderer.text(300, 447, "CHATGPT COMMAND", 16, CYAN, bold=True)
@@ -338,11 +338,11 @@ def draw_page_two(renderer: SvgRenderer | PdfRenderer, layout: dict, manifest: d
         renderer.rect(60, row_y + row * 51, 700, 47, fill, radius=5)
         renderer.text(80, row_y + row * 51 + 31, signal, 17, INK, bold=True)
         renderer.text(330, row_y + row * 51 + 31, command, 17, INK)
-    renderer.text(65, 1135, "Ctrl-Opt-Cmd-M opens Model Picker; Cmd-Opt-F13 remains Global Voice.", 16, BROWN, bold=True)
-    renderer.text(65, 1161, "Approve / Decline act on permission requests, not individual review diffs.", 16, BROWN, bold=True)
+    renderer.text(65, 1150, "Ctrl-Opt-Cmd-M opens Model Picker; Cmd-Opt-F13 is Global Voice.", 15, BROWN, bold=True)
+    renderer.text(65, 1176, "Approve / Decline act on permission requests, not review diffs.", 15, BROWN, bold=True)
 
     renderer.rect(815, 315, 800, 610, "#14161A", "#2D3239", 2, 26)
-    renderer.text(845, 360, "WORK PROMPTS / EXACT INSERTED TEXT", 27, CYAN, bold=True)
+    renderer.text(845, 360, "WORK PROMPTS / INSERTED TEXT", 27, CYAN, bold=True)
     macros = layout["macros"]
     for index, (label, macro) in enumerate(zip(MACRO_LABELS, macros[:8], strict=True)):
         column = index % 2
@@ -352,14 +352,14 @@ def draw_page_two(renderer: SvgRenderer | PdfRenderer, layout: dict, manifest: d
         renderer.rect(x, y, 345, 108, KEY, KEY_STROKE, 2, 14)
         renderer.text(x + 18, y + 31, f"{index + 1}. {label.upper()}", 18, WHITE, bold=True)
         text_lines(renderer, x + 18, y + 59, wrap(macro, 39), 16, MUTED, leading=20)
-    renderer.text(845, 900, "Prompts insert text only. Review, diagnosis, and explanation prompts preserve their no-edit boundaries.", 16, MUTED)
+    renderer.text(845, 900, "Macros insert without submitting. Review Only, Diagnose Only, and Explain do not authorize edits.", 16, MUTED)
 
     renderer.rect(815, 950, 800, 235, "#14161A", "#2D3239", 2, 26)
     renderer.text(845, 993, "USE NOTES", 25, CYAN, bold=True)
     notes = (
         "Hold WORK from CHAT, CONTROL, or REVIEW; release to return to the previous mode.",
-        "Pure VIA cannot trigger per-diff Accept or Reject unless ChatGPT exposes bindable commands.",
-        "If a custom command is unavailable in your app build, leave that signal unbound.",
+        "VIA cannot trigger per-diff Accept or Reject without matching ChatGPT commands.",
+        "Leave unavailable custom commands unbound.",
     )
     for index, note in enumerate(notes):
         renderer.text(850, 1031 + index * 44, "-", 18, PANEL_STROKE, bold=True)
@@ -375,7 +375,7 @@ def draw_page_two(renderer: SvgRenderer | PdfRenderer, layout: dict, manifest: d
 
 
 def write_svg(path: Path, draw, *args) -> None:
-    renderer = SvgRenderer("KB16 Codex Desktop cheat sheet", "Generated KB16 key map and reference page.")
+    renderer = SvgRenderer("KB16 Codex Desktop cheat sheet", "Two-page KB16 key map and shortcut reference.")
     draw(renderer, *args)
     path.write_text(renderer.finish(), encoding="utf-8")
 

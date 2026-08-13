@@ -1,72 +1,60 @@
 # KB16 Codex Desktop Macropad
 
-A pure-VIA layout for the DOIO/KeebMonkey Megalodon KB16-01, designed for Codex in the ChatGPT desktop app on macOS. It turns the 16-key, three-knob pad into a task navigator, voice controller, prompt launcher, model/effort console, and review companion without firmware flashing or background automation.
+A VIA-only layout for the wired DOIO/KeebMonkey Megalodon KB16-01. It maps the pad's 16 keys and three clickable encoders to Codex controls in the ChatGPT desktop app for macOS. No firmware changes or background automation are required.
 
-## Current layout
+## Layout
 
-The current v1 layout fixes cross-layer access, uses only current bindable ChatGPT desktop commands, and maps the hardware's OLED directly to four memorable modes:
+The OLED number identifies the active mode:
 
-| OLED | VIA | Mode | Purpose |
+| OLED | VIA layer | Mode | Behavior |
 |---|---:|---|---|
-| `1` | 0 | CHAT | Everyday navigation and composer controls |
-| `2` | 1 | CONTROL | Model, effort, plan, Fast mode, and approvals |
-| `3` | 2 | REVIEW | Review navigation and handoff actions |
-| `4` | 3 | WORK | Momentary prompt and editing macros |
+| `1` | 0 | CHAT | Default chat and composer controls |
+| `2` | 1 | CONTROL | Persistent model, effort, plan, and permission controls |
+| `3` | 2 | REVIEW | Persistent review and handoff controls |
+| `4` | 3 | WORK | Momentary prompt macros and editing keys |
 
-WORK is the highest-numbered layer, so holding it works correctly from CHAT, CONTROL, and REVIEW.
+WORK occupies the highest layer so it can be held from CHAT, CONTROL, or REVIEW.
 
-## Repository layout
-
-- [`config/`](config/) contains the canonical VIA layout and machine-readable shortcut manifest.
-- [`docs/KB16_Codex_Desktop_Setup.md`](docs/KB16_Codex_Desktop_Setup.md) is the complete setup, binding, recovery, and test guide.
-- [`docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.pdf`](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.pdf) is the print-ready two-page US Letter cheat sheet. The same folder contains the editable SVG pages and [`previews/`](docs/cheat-sheet/previews/) contains 150 dpi PNG renders.
-- [`scripts/`](scripts/) contains the source-driven cheat-sheet builder and dependency-free layout validator.
-- [`.agents/skills/`](.agents/skills/) contains the repository-specific Codex workflows for maintaining the cheat sheet and personalizing WORK prompts.
-
-Key files:
-
-- [`config/KB16-01_Codex_Desktop_v1.layout.json`](config/KB16-01_Codex_Desktop_v1.layout.json) — current layout to import into VIA
-- [`config/KB16_Codex_Shortcut_Manifest.json`](config/KB16_Codex_Shortcut_Manifest.json) — machine-readable shortcut reference
-- [`docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.svg`](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.svg) and [`docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg`](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet_Reference.svg) — editable cheat-sheet pages
-- [`scripts/validate_layout.py`](scripts/validate_layout.py) — dependency-free structural and consistency validator
-- [`scripts/build_cheat_sheet.py`](scripts/build_cheat_sheet.py) — source-driven SVG and PDF generator that fails on stale mappings
-- [`.agents/skills/personalize-kb16-work-prompts/SKILL.md`](.agents/skills/personalize-kb16-work-prompts/SKILL.md) — Codex skill for creating safe, role-specific WORK prompt packs
-- [`.agents/skills/build-kb16-cheat-sheet/SKILL.md`](.agents/skills/build-kb16-cheat-sheet/SKILL.md) — repository skill for generating and QAing future printable cheat sheets
-
-## Quick start
+## Install
 
 1. Connect the wired KB16-01 and open [VIA](https://usevia.app/) in a Chromium-based browser.
-2. Back up the current device layout.
-3. Load `config/KB16-01_Codex_Desktop_v1.layout.json`.
-4. Follow the setup guide to bind Global Voice, the Model Picker chord, and the `F14`–`F22` control signals. Toggle Voice works natively.
-5. Print or keep the cheat sheet nearby while the layout becomes familiar.
+2. Save a backup of the device's current layout.
+3. Load [`config/KB16-01_Codex_Desktop_v1.layout.json`](config/KB16-01_Codex_Desktop_v1.layout.json).
+4. Bind Global Voice, the Model Picker chord, and the `F14`-`F22` signals by following the [setup guide](docs/KB16_Codex_Desktop_Setup.md).
+5. Keep the [cheat sheet](docs/cheat-sheet/KB16_Codex_Desktop_Cheat_Sheet.pdf) nearby until the layout is familiar.
 
-The layout targets USB ID `0xD010:0x1601`. The native shortcuts were checked against the OpenAI command reference, and optional control commands were verified against ChatGPT desktop app build `26.803.61601` on 2026-08-13.
+The layout targets USB ID `0xD010:0x1601`. Documented command shortcuts were checked against the official command reference. Toggle Voice and custom command names were verified in ChatGPT desktop app build `26.803.61601` on 2026-08-13.
+
+## Repository contents
+
+| Path | Contents |
+|---|---|
+| [`config/`](config/) | Canonical VIA layout and shortcut manifest |
+| [`docs/KB16_Codex_Desktop_Setup.md`](docs/KB16_Codex_Desktop_Setup.md) | Installation, bindings, tests, and recovery |
+| [`docs/cheat-sheet/`](docs/cheat-sheet/) | Print-ready PDF, editable SVG pages, and PNG previews |
+| [`scripts/`](scripts/) | Layout validator and cheat-sheet builder |
+| [`.agents/skills/build-kb16-cheat-sheet/`](.agents/skills/build-kb16-cheat-sheet/) | Cheat-sheet maintenance workflow |
+| [`.agents/skills/personalize-kb16-work-prompts/`](.agents/skills/personalize-kb16-work-prompts/) | WORK-prompt personalization workflow |
 
 ## Personalize WORK prompts
 
-This repository includes a Codex skill that turns a description of your repeated workflows into eight labeled WORK prompts, a reusable profile, a separate VIA layout, and a Markdown prompt map. Invoke it from a Codex task in this repository, for example:
+The included Codex skill creates eight prompt macros, a reusable profile, a prompt map, and a separate VIA layout:
 
 ```text
 $personalize-kb16-work-prompts Make the WORK layer fit my Python debugging workflow.
 ```
 
-The skill preserves the source layout by default, verifies that only macro slots 0–7 changed, rejects auto-submitting control characters, and enforces the conservative 512-byte macro-storage ceiling.
+It changes only macro slots 0-7, does not add auto-submit characters, and enforces the layout's macro-storage limit.
 
-## Validate
-
-Run:
+## Validate and rebuild
 
 ```sh
 python3 scripts/validate_layout.py
-```
-
-To rebuild the editable cheat-sheet pages and PDF after a layout change, install ReportLab and run:
-
-```sh
 python3 scripts/build_cheat_sheet.py
 ```
 
+The builder requires ReportLab.
+
 ## Status
 
-This is a personal, unofficial configuration and is not affiliated with DOIO, KeebMonkey, Work Louder, VIA, or OpenAI.
+This is an unofficial personal configuration. It is not affiliated with DOIO, KeebMonkey, Work Louder, VIA, or OpenAI.

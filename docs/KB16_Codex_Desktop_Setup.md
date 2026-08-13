@@ -1,35 +1,37 @@
-# KB16 Codex Desktop Controller — Pure VIA
+# KB16 Codex Desktop setup
 
-This layout turns the wired DOIO/KeebMonkey Megalodon **KB16-01** into a four-mode controller for Codex in the ChatGPT desktop app on macOS. It uses VIA only: no firmware flashing, `config.toml` changes, Hammerspoon rules, Shortcuts automations, or background services.
+This layout maps the wired DOIO/KeebMonkey Megalodon KB16-01 to Codex controls in the ChatGPT desktop app for macOS. It uses VIA only: no firmware flashing, `config.toml` changes, Hammerspoon rules, Shortcuts automations, or background services.
 
 ## Compatibility
 
-- USB vendor ID: `0xD010`
-- USB product ID: `0x1601`
-- VIA device ID: `3490715137`
-- Matrix: 4 rows × 5 columns
-- Controls: 16 keys, three clickable encoders, four layers
-- Verified ChatGPT desktop app build: `26.803.61601`
-- Verification date: 2026-08-13
+| Item | Value |
+|---|---|
+| USB vendor ID | `0xD010` |
+| USB product ID | `0x1601` |
+| VIA device ID | `3490715137` |
+| Matrix | 4 rows x 5 columns |
+| Physical controls | 16 keys and three clickable encoders |
+| Layers | Four |
+| Verified ChatGPT build | `26.803.61601` |
+| Verification date | 2026-08-13 |
 
-This does not target the older `0xFEED:0x6060` definition or the wireless KB16.
+This layout does not support the older `0xFEED:0x6060` definition or the wireless KB16.
 
-## Install the layout
+## Install
 
 1. Open [VIA](https://usevia.app/) in a Chromium-based browser.
-2. Connect and authorize the wired KB16. Confirm VIA identifies it as **KB16-01**.
-3. Open **Configure → Save + Load**.
-4. Save the current device layout as a backup.
-5. Choose **Load Saved Layout** and select `KB16-01_Codex_Desktop_v1.layout.json`.
-6. Wait for **Successfully updated layout** before unplugging the pad.
+2. Connect the wired KB16-01 and authorize it. Confirm that VIA identifies it as **KB16-01**.
+3. Open **Configure > Save + Load** and save a backup of the current layout.
+4. Choose **Load Saved Layout** and select `KB16-01_Codex_Desktop_v1.layout.json`.
+5. Wait for **Successfully updated layout** before unplugging the pad.
 
-The layout is stored on the KB16. Keep both your original backup and the current JSON.
+The KB16 stores the layout on the device. Keep the backup and a copy of the imported JSON.
 
-## Read the hardware
+## Controls and layers
 
-The 4×4 key grid is on the left. The two small encoders are at the upper right, the OLED is below them, and the large dial is at the lower right.
+The 4x4 key grid is on the left. The two small encoders are at the upper right, the OLED is below them, and the large dial is at the lower right.
 
-The OLED uses one-based numbers while VIA uses zero-based layer indexes:
+The OLED is one-based; VIA layers are zero-based:
 
 | OLED | VIA layer | Mode | Behavior |
 |---|---:|---|---|
@@ -38,29 +40,29 @@ The OLED uses one-based numbers while VIA uses zero-based layer indexes:
 | `3` | 2 | REVIEW | Persistent until another mode is selected |
 | `4` | 3 | WORK | Active only while WORK is held |
 
-WORK is deliberately layer 3, the highest layer. That makes its momentary mappings accessible from every persistent mode. Reconnecting the pad returns it to CHAT.
+WORK is the highest layer, which lets its momentary mappings work from every persistent mode. Reconnecting the pad returns it to CHAT.
 
-## Configure ChatGPT desktop shortcuts
+## Configure ChatGPT shortcuts
 
-Native shortcuts work immediately. Global Voice and CONTROL actions use uncommon signals that must be recorded once.
+Most keys use built-in app shortcuts. Global Voice, Model Picker, and the `F14`-`F22` signals require one-time bindings.
 
-### Voice controls
+### Voice
 
-**TOGGLE VOICE** sends the native `Control-Shift-V` shortcut. It toggles voice chat while the ChatGPT app is focused and requires no custom binding.
+- **Toggle Voice** sends `Control-Shift-V` while ChatGPT is focused. This shortcut was verified in the app build listed above.
+- **Global Voice** sends `Command-Option-F13`. In **Settings > Voice > Voice chat hotkey**, activate the shortcut field and press the physical **Global Voice** key.
+- **Dictation** sends `Control-Shift-D` and inserts speech as composer text.
 
-**GLOBAL VOICE** works from anywhere in macOS. Open **Settings → Voice → Voice chat hotkey**, activate the shortcut field, and press the physical **GLOBAL VOICE** key. It sends `Command-Option-F13`.
+A voice chat must start in a new, empty chat or task. Press the large dial to Search chats; voice and chat search are separate actions.
 
-Voice chat must begin in a new, empty chat or task. Dictation is separate and uses the native `Control-Shift-D` shortcut. Search chats remains available by pressing the large dial.
+### Custom command signals
 
-### CONTROL signals
+Open **Settings > Keyboard Shortcuts**. Search for each command name, activate its shortcut field, and use the listed physical control.
 
-Open **Settings → Keyboard Shortcuts**. For each available command below, search its exact name, activate its shortcut field, and perform the listed physical control on the KB16.
-
-| Physical control | Signal | Exact command name |
+| Physical control | Signal | Command name |
 |---|---|---|
 | Upper-left knob counterclockwise | `⌃⌥⌘[` | Decrease reasoning effort |
 | Upper-left knob clockwise | `⌃⌥⌘]` | Increase reasoning effort |
-| Press upper-left knob or a Model picker key | `⌃⌥⌘M` | Open model picker |
+| Upper-left knob press or Model Picker key | `⌃⌥⌘M` | Open model picker |
 | CONTROL row 1, column 4 | `F14` | Toggle plan mode |
 | CONTROL row 2, column 1 | `F15` | Toggle Fast mode |
 | CONTROL row 2, column 2 | `F16` | Attach files and folders |
@@ -71,52 +73,52 @@ Open **Settings → Keyboard Shortcuts**. For each available command below, sear
 | CONTROL row 3, column 3 | `F21` | Open side chat |
 | CONTROL row 3, column 1 | `F22` | Open project picker |
 
-`Control-Option-Command-M` for the model picker and `Command-Option-F13` for Voice are separate signals. If a named command is unavailable in your app build or account, leave that signal unbound.
+`Control-Option-Command-M` opens Model Picker; `Command-Option-F13` remains the Global Voice hotkey. Command availability can vary by app version and account rollout. Leave unavailable commands unbound.
 
-## Knobs — every mode
+## Knobs
+
+The knobs behave the same on every mode:
 
 | Physical control | Counterclockwise | Press | Clockwise |
 |---|---|---|---|
-| Upper-left small knob | Effort down | Model picker | Effort up |
-| Upper-right small knob | Page up | Command menu | Page down |
+| Upper-left small knob | Effort down | Model Picker | Effort up |
+| Upper-right small knob | Page up | Command Menu | Page down |
 | Large lower-right dial | Previous chat | Search chats | Next chat |
 
-## OLED 1 — CHAT
+## OLED 1 - CHAT
 
 | | Column 1 | Column 2 | Column 3 | Column 4 |
 |---|---|---|---|---|
-| Row 1 | New chat | Toggle Voice | Quick chat | Command menu |
+| Row 1 | New chat | Toggle Voice | Quick chat | Command Menu |
 | Row 2 | Dictation | Global Voice | Send | Escape / interrupt |
 | Row 3 | Sidebar | Open folder | Open Review | Terminal |
-| Row 4 | Hold WORK | Enter CONTROL | Enter REVIEW | Model picker |
+| Row 4 | Hold WORK | Enter CONTROL | Enter REVIEW | Model Picker |
 
-CHAT contains the high-frequency actions and is the power-on default.
-
-## OLED 2 — CONTROL
+## OLED 2 - CONTROL
 
 | | Column 1 | Column 2 | Column 3 | Column 4 |
 |---|---|---|---|---|
-| Row 1 | Effort down | Effort up | Model picker | Plan mode |
+| Row 1 | Effort down | Effort up | Model Picker | Plan mode |
 | Row 2 | Fast mode | Attach files | Approve request | Decline request |
-| Row 3 | Project picker | Copy as Markdown | Open side chat | Continue in new chat |
+| Row 3 | Project Picker | Copy as Markdown | Open side chat | Continue in new chat |
 | Row 4 | Hold WORK | Return CHAT | Enter REVIEW | Escape / interrupt |
 
-Approve and Decline apply to active permission requests. They do not accept or reject individual code-review diffs.
+Approve and Decline act on an active permission request. They do not accept or reject individual review diffs.
 
-## OLED 3 — REVIEW
+## OLED 3 - REVIEW
 
 | | Column 1 | Column 2 | Column 3 | Column 4 |
 |---|---|---|---|---|
 | Row 1 | Open Review | Toggle Review panel | Approve request | Decline request |
 | Row 2 | Previous chat | Next chat | Copy as Markdown | Continue in new chat |
-| Row 3 | Copy | Find in chat | Terminal | Command menu |
+| Row 3 | Copy | Find in chat | Terminal | Command Menu |
 | Row 4 | Hold WORK | Return CHAT | Enter CONTROL | Escape / interrupt |
 
-Pure VIA cannot press the review UI's per-diff Accept or Reject buttons unless ChatGPT exposes them as keyboard-shortcut commands. The current layout intentionally avoids nonfunctional placeholder bindings.
+VIA cannot press the review UI's per-diff Accept or Reject buttons unless ChatGPT exposes matching keyboard commands.
 
-## OLED 4 — WORK, momentary
+## OLED 4 - WORK, momentary
 
-Hold the bottom-left WORK key from CHAT, CONTROL, or REVIEW. Release it to return to the prior mode. Prompt macros insert text into the composer but never submit it.
+Hold the bottom-left WORK key from CHAT, CONTROL, or REVIEW. Release it to return to the previous mode. The prompt macros insert text but do not submit it.
 
 | | Column 1 | Column 2 | Column 3 | Column 4 |
 |---|---|---|---|---|
@@ -136,32 +138,30 @@ Hold the bottom-left WORK key from CHAT, CONTROL, or REVIEW. Release it to retur
 7. `Update documentation for the current change.`
 8. `Propose a concise plan before editing.`
 
-The complete sixteen-slot macro block is kept below 480 UTF-8 bytes, including slot terminators, for conservative firmware compatibility.
+The full 16-slot macro block, including each slot terminator, remains below the conservative 480-byte limit.
 
-## Five-minute verification
+## Verify the layout
 
-Test the pad after loading and binding:
-
-1. Confirm the OLED shows `1` after reconnecting.
-2. Enter CONTROL and REVIEW; confirm the OLED shows `2` and `3`.
-3. Hold WORK from all three modes; confirm the OLED temporarily shows `4` and a macro key inserts text without submitting.
+1. Reconnect the pad and confirm that the OLED shows `1`.
+2. Enter CONTROL and REVIEW; confirm that the OLED shows `2` and `3`.
+3. Hold WORK from all three modes. Confirm that the OLED shows `4` only while held and that a macro inserts text without submitting.
 4. Turn and press all three knobs in CHAT.
-5. In a new empty task, test Dictation, Toggle Voice, and Global Voice separately. Confirm Global Voice also works while another app is focused.
-6. In CONTROL, test Model, Plan, Fast, Attach, Approve/Decline when a request is visible, and the handoff commands.
-7. Open Review and verify native review-panel navigation. Do not expect per-diff Accept/Reject buttons from pure VIA.
+5. Start a new empty task and test Dictation, Toggle Voice, and Global Voice separately. Also test Global Voice while another app is focused.
+6. In CONTROL, test Model Picker, Plan, Fast, Attach, Approve or Decline during a visible request, and the handoff commands.
+7. Open Review and test its built-in navigation. Per-diff Accept and Reject are not available through this VIA layout.
 
-## Recovery and troubleshooting
+## Troubleshooting
 
-- If VIA reports a device mismatch, confirm the connected device is `0xD010:0x1601`.
-- If VIA reports an incorrect macro count, restore your backup and enter the eight macro strings manually in VIA's Macros pane.
-- If a custom action does nothing, confirm its exact command is still present in **Settings → Keyboard Shortcuts** and record the physical key again.
-- If macOS intercepts a chord, use Keyboard Shortcuts' keystroke-search mode to locate the conflict.
-- If a layer appears stuck, press Return CHAT or reconnect the pad.
+- **Device mismatch:** confirm that the connected device is `0xD010:0x1601`.
+- **Incorrect macro count:** restore the backup, then enter the eight macro strings manually in VIA's Macros pane.
+- **Custom action does nothing:** confirm that the command still appears in **Settings > Keyboard Shortcuts**, then record the physical signal again.
+- **macOS intercepts a chord:** use the Keyboard Shortcuts keystroke-search mode to find the conflict.
+- **Layer appears stuck:** press Return CHAT or reconnect the pad.
 
 ## Sources
 
-- [Official ChatGPT desktop command reference](https://learn.chatgpt.com/docs/reference/commands)
-- [Official ChatGPT Voice guide](https://learn.chatgpt.com/docs/features/voice)
+- [ChatGPT desktop command reference](https://learn.chatgpt.com/docs/reference/commands)
+- [ChatGPT Voice](https://learn.chatgpt.com/docs/features/voice)
 - [KeebMonkey KB16 product details](https://www.keebmonkey.com/en-gb/products/megalodon-triple-knob-macro-pad)
-- [VIA application](https://usevia.app/)
+- [VIA](https://usevia.app/)
 - [QMK layer behavior](https://docs.qmk.fm/feature_layers)

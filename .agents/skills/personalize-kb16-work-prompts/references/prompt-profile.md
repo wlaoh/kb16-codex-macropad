@@ -1,6 +1,6 @@
 # KB16 WORK prompt profiles
 
-Use a JSON profile to keep prompt intent separate from the VIA layout export. The updater maps macro slots to the first two rows of OLED 4 / VIA layer 3.
+A profile keeps prompt intent separate from the VIA export. Slots 0-7 map to the first two rows of OLED 4 / VIA layer 3.
 
 | Slot | Physical key |
 |---:|---|
@@ -13,7 +13,7 @@ Use a JSON profile to keep prompt intent separate from the VIA layout export. Th
 | 6 | WORK row 2, column 3 |
 | 7 | WORK row 2, column 4 |
 
-## Profile schema
+## Schema
 
 ```json
 {
@@ -64,21 +64,18 @@ Use a JSON profile to keep prompt intent separate from the VIA layout export. Th
 }
 ```
 
-`name` must be a lowercase hyphenated slug. `description` is optional. `prompts` must contain each slot from 0 through 7 exactly once. Labels must be printable ASCII and no longer than 18 characters. Prompt text must be nonempty printable ASCII with no control characters.
+`name` is a lowercase hyphenated slug. `description` is optional. `prompts` must contain every slot from 0 through 7 exactly once. Labels are printable ASCII with a maximum of 18 characters; prompt text is nonempty printable ASCII with no control characters.
 
-## Prompt design
+## Writing rules
 
-- Write complete instructions that work against the current conversation and repository context without placeholders.
-- Prefer eight distinct operations over small wording variants.
-- Put frequent, general operations in slots 0-3 and specialized or safety-oriented operations in slots 4-7.
-- State whether Codex may edit. Use language such as `Do not edit` for review, explanation, or diagnosis-only prompts.
-- Include verification expectations in editing prompts when space permits.
-- Keep wording compact. The complete sixteen-slot macro block must fit within 512 bytes; aim for 480 bytes or fewer so later wording changes have headroom.
-- Avoid sensitive data, repository-specific secrets, shell commands, and temporary paths in reusable prompt profiles.
+- Write standalone instructions with no placeholders.
+- Use eight distinct operations; place the most frequent in slots 0-3.
+- Say whether Codex may edit. Use `Do not edit` for read-only prompts.
+- Include verification in editing prompts when space allows.
+- Keep all 16 macro slots within 512 bytes and target 480 bytes or fewer.
+- Do not include secrets, shell commands, or temporary paths.
 
-## Output naming
-
-Use a recoverable source and a recognizable personalized output, for example:
+## Paths
 
 ```text
 config/KB16-01_Codex_Desktop_v1.layout.json
