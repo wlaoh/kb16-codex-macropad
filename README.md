@@ -23,6 +23,7 @@ WORK is the highest-numbered layer, so holding it works correctly from CHAT, CON
 - [`outputs/KB16_Codex_Shortcut_Manifest.json`](outputs/KB16_Codex_Shortcut_Manifest.json) — machine-readable shortcut reference
 - [`scripts/validate_layout.py`](scripts/validate_layout.py) — dependency-free structural and consistency validator
 - [`.agents/skills/personalize-kb16-work-prompts/SKILL.md`](.agents/skills/personalize-kb16-work-prompts/SKILL.md) — Codex skill for creating safe, role-specific WORK prompt packs
+- [`.agents/skills/build-kb16-cheat-sheet/SKILL.md`](.agents/skills/build-kb16-cheat-sheet/SKILL.md) — repository skill for generating and QAing future printable cheat sheets
 
 ## Quick start
 
