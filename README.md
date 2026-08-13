@@ -2,9 +2,9 @@
 
 A pure-VIA layout for the DOIO/KeebMonkey Megalodon KB16-01, designed for Codex in the ChatGPT desktop app on macOS. It turns the 16-key, three-knob pad into a task navigator, voice controller, prompt launcher, model/effort console, and review companion without firmware flashing or background automation.
 
-## Current release: v2
+## Current layout
 
-Version 2 fixes cross-layer access, uses only current bindable ChatGPT desktop commands, and maps the hardware's OLED directly to four memorable modes:
+The current v1 layout fixes cross-layer access, uses only current bindable ChatGPT desktop commands, and maps the hardware's OLED directly to four memorable modes:
 
 | OLED | VIA | Mode | Purpose |
 |---|---:|---|---|
@@ -17,19 +17,18 @@ WORK is the highest-numbered layer, so holding it works correctly from CHAT, CON
 
 ## Files
 
-- [`outputs/KB16-01_Codex_Desktop_v2.layout.json`](outputs/KB16-01_Codex_Desktop_v2.layout.json) — current layout to import into VIA
+- [`outputs/KB16-01_Codex_Desktop_v1.layout.json`](outputs/KB16-01_Codex_Desktop_v1.layout.json) — current layout to import into VIA
 - [`outputs/KB16_Codex_Desktop_Setup.md`](outputs/KB16_Codex_Desktop_Setup.md) — complete setup, binding, recovery, and test guide
-- [`outputs/KB16_Codex_Desktop_v2_Cheat_Sheet.svg`](outputs/KB16_Codex_Desktop_v2_Cheat_Sheet.svg) — printable visual reference
-- [`outputs/KB16_Codex_Shortcut_Manifest.json`](outputs/KB16_Codex_Shortcut_Manifest.json) — machine-readable v2 reference
+- [`outputs/KB16_Codex_Desktop_Cheat_Sheet.svg`](outputs/KB16_Codex_Desktop_Cheat_Sheet.svg) — printable visual reference
+- [`outputs/KB16_Codex_Shortcut_Manifest.json`](outputs/KB16_Codex_Shortcut_Manifest.json) — machine-readable shortcut reference
 - [`scripts/validate_layout.py`](scripts/validate_layout.py) — dependency-free structural and consistency validator
 - [`.agents/skills/personalize-kb16-work-prompts/SKILL.md`](.agents/skills/personalize-kb16-work-prompts/SKILL.md) — Codex skill for creating safe, role-specific WORK prompt packs
-- [`outputs/KB16-01_Codex_Desktop_v1.layout.json`](outputs/KB16-01_Codex_Desktop_v1.layout.json) — retained legacy v1 backup
 
 ## Quick start
 
 1. Connect the wired KB16-01 and open [VIA](https://usevia.app/) in a Chromium-based browser.
 2. Back up the current device layout.
-3. Load `outputs/KB16-01_Codex_Desktop_v2.layout.json`.
+3. Load `outputs/KB16-01_Codex_Desktop_v1.layout.json`.
 4. Follow the setup guide to bind Live Voice and the `F13`–`F22` control signals.
 5. Print or keep the cheat sheet nearby while the layout becomes familiar.
 
@@ -37,7 +36,7 @@ The layout targets USB ID `0xD010:0x1601`. The native shortcuts were checked aga
 
 ## Personalize WORK prompts
 
-This repository includes a Codex skill that turns a description of your repeated workflows into eight labeled WORK prompts, a reusable profile, a versioned VIA layout, and a Markdown prompt map. Invoke it from a Codex task in this repository, for example:
+This repository includes a Codex skill that turns a description of your repeated workflows into eight labeled WORK prompts, a reusable profile, a separate VIA layout, and a Markdown prompt map. Invoke it from a Codex task in this repository, for example:
 
 ```text
 $personalize-kb16-work-prompts Make the WORK layer fit my Python debugging workflow.

@@ -1,15 +1,15 @@
 ---
 name: personalize-kb16-work-prompts
-description: Personalize the eight WORK-layer text macros in the KB16-01 Codex Desktop v2 VIA .layout.json, generate a reusable prompt profile and prompt map, and verify that hardware mappings remain unchanged. Use when a user asks to change, rewrite, tailor, replace, or create KB16 WORK prompts, prompt buttons, macro text, or a role-specific prompt pack. Do not use for other keyboards, firmware flashing, arbitrary key remapping, or Codex shortcut changes.
+description: Personalize the eight WORK-layer text macros in the KB16-01 Codex Desktop VIA .layout.json, generate a reusable prompt profile and prompt map, and verify that hardware mappings remain unchanged. Use when a user asks to change, rewrite, tailor, replace, or create KB16 WORK prompts, prompt buttons, macro text, or a role-specific prompt pack. Do not use for other keyboards, firmware flashing, arbitrary key remapping, or Codex shortcut changes.
 ---
 
 # Personalize KB16 WORK Prompts
 
-Tailor the eight prompt keys while preserving the validated KB16-01 v2 keymap, layer behavior, encoders, shortcuts, and conservative firmware limits.
+Tailor the eight prompt keys while preserving the validated KB16-01 keymap, layer behavior, encoders, shortcuts, and conservative firmware limits.
 
 ## Workflow
 
-1. Locate the source layout. Prefer `outputs/KB16-01_Codex_Desktop_v2.layout.json` in this repository unless the user names another KB16-01 v2 layout.
+1. Locate the source layout. Prefer `outputs/KB16-01_Codex_Desktop_v1.layout.json` in this repository unless the user names another KB16-01 layout.
 2. Read [references/prompt-profile.md](references/prompt-profile.md) before drafting a profile.
 3. Infer the user's repeated workflows from the request. Ask one concise question only when the role or desired actions cannot be inferred safely.
 4. Draft exactly eight short labels and eight complete prompt strings. Put the highest-frequency actions in the top row and make read-only versus editing behavior explicit.
@@ -23,7 +23,7 @@ Tailor the eight prompt keys while preserving the validated KB16-01 v2 keymap, l
      --dry-run
    ```
 
-7. Generate a versioned layout and Markdown prompt map. Do not overwrite the canonical v2 layout unless the user explicitly asks to replace the default.
+7. Generate a separate personalized layout and Markdown prompt map. Do not overwrite the canonical layout unless the user explicitly asks to replace the default.
 
    ```sh
    python3 <skill-dir>/scripts/personalize_work_prompts.py \

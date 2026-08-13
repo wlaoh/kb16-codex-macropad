@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 1650 1275" role="img" aria-labelledby="title description">
-  <title id="title">KB16 Codex Desktop pure VIA v2 cheat sheet</title>
+  <title id="title">KB16 Codex Desktop pure VIA cheat sheet</title>
   <desc id="description">Four layer maps and three encoder assignments for the yellow DOIO KB16 macropad.</desc>
   <defs>
     <style>
@@ -24,7 +24,7 @@
 
   <rect class="page" width="1650" height="1275"/>
   <text class="header" x="45" y="63">KB16 × CODEX</text>
-  <text class="subhead" x="45" y="94">PURE VIA v2 · OLED 1–4 · macOS · cyan keys change mode or expose a held layer</text>
+  <text class="subhead" x="45" y="94">PURE VIA · OLED 1–4 · macOS · cyan keys change mode or expose a held layer</text>
 
   <!-- OLED 1: CHAT -->
   <g transform="translate(35 120)" filter="url(#shadow)">
@@ -168,5 +168,5 @@
     <text class="knob-text" x="1300" y="104">press model · CW effort +</text>
   </g>
 
-  <text x="1600" y="1253" text-anchor="end" style="font: 500 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #747b84;">KB16 Codex Desktop v2 · 2026-08-13</text>
+  <text x="1600" y="1253" text-anchor="end" style="font: 500 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #747b84;">KB16 Codex Desktop · 2026-08-13</text>
 </svg>

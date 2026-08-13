@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the importable KB16 Codex v2 layout and its manifest."""
+"""Validate the importable KB16 Codex layout and its manifest."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LAYOUT_PATH = ROOT / "outputs" / "KB16-01_Codex_Desktop_v2.layout.json"
+LAYOUT_PATH = ROOT / "outputs" / "KB16-01_Codex_Desktop_v1.layout.json"
 MANIFEST_PATH = ROOT / "outputs" / "KB16_Codex_Shortcut_Manifest.json"
 README_PATH = ROOT / "README.md"
 SETUP_PATH = ROOT / "outputs" / "KB16_Codex_Desktop_Setup.md"
@@ -127,8 +127,7 @@ def validate() -> list[str]:
             require(keycode in flattened, f"required custom signal {keycode} is absent", errors)
         require("KC_F23" not in flattened and "KC_F24" not in flattened, "unassigned F23/F24 must not appear", errors)
 
-    require(manifest.get("version") == "2.0.0", "manifest version must be 2.0.0", errors)
-    require(manifest.get("layoutFile") == LAYOUT_PATH.name, "manifest layoutFile must name the v2 export", errors)
+    require(manifest.get("layoutFile") == LAYOUT_PATH.name, "manifest layoutFile must name the current export", errors)
     hardware = manifest.get("hardware", {})
     require(hardware.get("vendorProductIdDecimal") == layout.get("vendorProductId"), "manifest and layout device IDs differ", errors)
 
@@ -160,7 +159,7 @@ def validate() -> list[str]:
         except OSError as exc:
             errors.append(f"{path.relative_to(ROOT)}: {exc}")
             continue
-        require(LAYOUT_PATH.name in text, f"{path.relative_to(ROOT)} does not reference the v2 layout", errors)
+        require(LAYOUT_PATH.name in text, f"{path.relative_to(ROOT)} does not reference the current layout", errors)
         require("reasoning depth" not in text.lower(), f"{path.relative_to(ROOT)} uses stale reasoning-depth terminology", errors)
 
     return errors
@@ -174,7 +173,7 @@ def main() -> int:
             print(f"- {error}", file=sys.stderr)
         return 1
 
-    print("OK: KB16 Codex Desktop v2 layout, manifest, and documentation are consistent")
+    print("OK: KB16 Codex Desktop layout, manifest, and documentation are consistent")
     return 0
 
 

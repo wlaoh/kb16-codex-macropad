@@ -2,8 +2,7 @@
   "device": "KB16-01",
   "platform": "macOS",
   "targetApplication": "ChatGPT desktop app — Codex",
-  "version": "2.0.0",
-  "layoutFile": "KB16-01_Codex_Desktop_v2.layout.json",
+  "layoutFile": "KB16-01_Codex_Desktop_v1.layout.json",
   "verifiedAppVersion": "26.803.61601",
   "verifiedDate": "2026-08-13",
   "hardware": {

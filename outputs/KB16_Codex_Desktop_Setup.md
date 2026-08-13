@@ -1,4 +1,4 @@
-# KB16 Codex Desktop Controller — Pure VIA v2
+# KB16 Codex Desktop Controller — Pure VIA
 
 This layout turns the wired DOIO/KeebMonkey Megalodon **KB16-01** into a four-mode controller for Codex in the ChatGPT desktop app on macOS. It uses VIA only: no firmware flashing, `config.toml` changes, Hammerspoon rules, Shortcuts automations, or background services.
 
@@ -20,10 +20,10 @@ This does not target the older `0xFEED:0x6060` definition or the wireless KB16.
 2. Connect and authorize the wired KB16. Confirm VIA identifies it as **KB16-01**.
 3. Open **Configure → Save + Load**.
 4. Save the current device layout as a backup.
-5. Choose **Load Saved Layout** and select `KB16-01_Codex_Desktop_v2.layout.json`.
+5. Choose **Load Saved Layout** and select `KB16-01_Codex_Desktop_v1.layout.json`.
 6. Wait for **Successfully updated layout** before unplugging the pad.
 
-The layout is stored on the KB16. Keep both your original backup and the v2 JSON.
+The layout is stored on the KB16. Keep both your original backup and the current JSON.
 
 ## Read the hardware
 
@@ -110,7 +110,7 @@ Approve and Decline apply to active permission requests. They do not accept or r
 | Row 3 | Copy | Find in chat | Terminal | Command menu |
 | Row 4 | Hold WORK | Return CHAT | Enter CONTROL | Escape / interrupt |
 
-Pure VIA cannot press the review UI's per-diff Accept or Reject buttons unless ChatGPT exposes them as keyboard-shortcut commands. V2 intentionally avoids nonfunctional placeholder bindings.
+Pure VIA cannot press the review UI's per-diff Accept or Reject buttons unless ChatGPT exposes them as keyboard-shortcut commands. The current layout intentionally avoids nonfunctional placeholder bindings.
 
 ## OLED 4 — WORK, momentary
 

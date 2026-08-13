@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a KB16-01 v2 VIA layout with personalized WORK prompts."""
+"""Create a KB16-01 VIA layout with personalized WORK prompts."""
 
 from __future__ import annotations
 
@@ -219,7 +219,7 @@ def write_text(path: Path, content: str) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--layout", type=Path, required=True, help="Source KB16-01 v2 .layout.json")
+    parser.add_argument("--layout", type=Path, required=True, help="Source KB16-01 .layout.json")
     parser.add_argument("--profile", type=Path, required=True, help="WORK prompt profile JSON")
     parser.add_argument("--output", type=Path, help="Personalized .layout.json output")
     parser.add_argument("--prompt-map", type=Path, help="Optional Markdown prompt-map output")
